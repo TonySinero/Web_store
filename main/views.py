@@ -27,16 +27,6 @@ class EcomMixin(object):
 class HomeView(EcomMixin, TemplateView):
     template_name = "home.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        all_products = Product.objects.all().order_by("-id")
-        paginator = Paginator(all_products, 8)
-        page_number = self.request.GET.get('page')
-        print(page_number)
-        product_list = paginator.get_page(page_number)
-        context['product_list'] = product_list
-        return context
-
 
 class AllProductsView(EcomMixin, TemplateView):
     template_name = "allproducts.html"
@@ -59,6 +49,20 @@ class ProductDetailView(EcomMixin, TemplateView):
         product.view_count += 1
         product.save()
         context['product'] = product
+        return context
+
+
+class ShopView(EcomMixin, TemplateView):
+    template_name = "all.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        all_products = Product.objects.all().order_by("-id")
+        paginator = Paginator(all_products, 12)
+        page_number = self.request.GET.get('page')
+        print(page_number)
+        product_list = paginator.get_page(page_number)
+        context['product_list'] = product_list
         return context
 
 

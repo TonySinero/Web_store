@@ -1,11 +1,14 @@
+from django.template.context_processors import static
 from django.urls import path
 from .views import *
+
 
 
 app_name = 'main'
 urlpatterns = [
     # Client side pages
     path('', HomeView.as_view(), name='home'),
+    path('all/', ShopView.as_view(), name='all'),
     path('about/', AboutView.as_view(), name='about'),
     path('all-products/', AllProductsView.as_view(), name='allproducts'),
     path('product/<slug:slug>/', ProductDetailView.as_view(), name='productdetail'),

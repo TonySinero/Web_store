@@ -1,66 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
+{% load static %}
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-
 <head>
+
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'main:home' %}">Store Series</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main:home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:allproducts' %}">Categories</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:mycart' %}">Cart</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:about' %}">About us</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My Account
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% if request.user.customer %}
-                <a class="dropdown-item" href="{% url 'main:customerprofile' %}">My Profile</a>
-                <a class="dropdown-item" href="{% url 'main:customerlogout' %}">Logout</a>
-                {% else %}
-                <a class="dropdown-item" href="{% url 'main:customerregistration' %}">Register</a>
-                <a class="dropdown-item" href="{% url 'main:customerlogin' %}">Login</a>
-                {% endif %}
-                </div>
-            </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" action="{% url 'main:search' %}" method="GET">
-            <input name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
-            <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-12">
+            </div>
+            <div class="col-md-4 col-12 text-center">
+                <h2 class="my-md-3 site-title text-color" >Store Series</h2>
+            </div>
+            <div class="col-md-4 col-12 text-right">
+                <p class="my-md-4 header-links ">
+                    {% if request.user.customer %}
+                    <a href="{% url 'main:customerprofile' %}" class="px-2 text-color" >My Profile</a>
+                    <a href="{% url 'main:customerlogout' %}" class="px-1 text-color">Logout</a>
+                    {% else %}
+                    <a href="{% url 'main:customerlogin' %}" class="px-2 text-color" >Sign In</a>
+                    <a href="{% url 'main:customerregistration' %}" class="px-1 text-color">Create an Account</a>
+                    {% endif %}
+                </p>
+            </div>
         </div>
+    </div>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'main:home' %}">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'main:all' %}">SHOP</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'main:allproducts' %}">CATEGORIES</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="{% url 'main:about' %}">ABOUT US</a>
+                </li>
+              </ul>
+            </div>
+              <div class="navbar-nat">
+                    <div class="container">
+                        <form class="search_box" action="{% url 'main:search' %}" method="GET">
+                            <input type="search" name="keyword" placeholder="Search..." class="input" />
+                            <button class="btn" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+              </div>
+              <div class="navbar-nax">
+                  <div class="container">
+                    <div class="shopping_bag">
+                        <form action="{% url 'main:mycart' %}">
+                         <button  class="fas fa-shopping-bag p-2"></button>
+                        </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
         </nav>
-    <hr>
-
+    </div>
+</header>
 
     {% block content %}
     {% endblock %}
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMwMDAwMDAiLCJ3ZWIiOnsiYm90SWQiOiI2MGI1MzQxMDBjNTQ1NDAwN2M4MGRhMjAiLCJ0aGVtZSI6IiMwMDAwMDAiLCJsYWJlbCI6IkhpISJ9LCJ3ZWxjb21lVGV4dCI6IkFzayBhbnkgcXVlc3Rpb24ifQ==" async defer></script>
+<div class="footer">
+    <div class="row container mx-auto pt-5">
+        <footer>
+             <div class="footer-content container mx-auto pt-5">
+                <p>We will be glad to see you in our store!</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                 <p>copyright &copy;2021 Store series. designed by <span>Me</span></p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../static/js/main.js"></script>
 </body>
+
 
 </html>
