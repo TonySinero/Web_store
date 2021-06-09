@@ -310,8 +310,6 @@ h2.title:after{
     padding-top: 40px;
     color: #fff;
 
-
-
 }
 
 .footer-content{
@@ -399,5 +397,101 @@ h2.title:after{
 .areol:hover,
 .areol:active{
     color: var(--text-color);
+    transition: 0.5s;
+}
+#featured h2{
+    font-family: var(--roboto);
+    font-weight: bold;
+}
+#featured h2:hover{
+    color: var(--text-color);
+    transition: 0.5s;
+}
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+.product img{
+    transition: 0.3s all;
+
+}
+.product:hover img{
+    opacity: 0.7;
+
+}
+.p-name{
+    color: black;
+    text-decoration: none;
+    font-family: var(--roboto);
+}
+.p-name:hover{
+    color: var(--text-color);
+    transition: 0.5s;
+}
+.p-price{
+    font-family: var(--roboto);
+    font-weight: bold;
+}
+.buy-btn{
+    background-color: black;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s all;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 12px;
+
+}
+.buy-btn a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--roboto);
+}
+.buy-btn:hover{
+    transform: translateY(0);
+    opacity: 1;
+
+}
+hr{
+    width: 30px;
+    height: 2px;
+
+}
+.star i{
+    font-size: 0.6rem;
+}
+body > div.container > nav > ul > li.page-item.active > a{
+    background-color: black;
+    border: white;
+}
+body > div.container > nav > ul > li:nth-child(n):hover>a{
+    background-color: var(--text-color);
+    color: white;
+    transition: 0.5s;
+}
+.pagination a{
+    color: black;
+}
+
+#catego{
+    color: var(--text-color);
+    font-family: var(--roboto);
+    font-weight: bold;
+
+}
+#catego:hover{
+    color: black;
+    transition: 0.5s;
+}
+
+#success{
+    font-family: var(--roboto);
+    font-weight: bold;
+    margin-top: 200px;
+}
+#success:hover{
+    color: lime;
     transition: 0.5s;
 }
