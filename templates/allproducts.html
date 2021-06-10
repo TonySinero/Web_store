@@ -16,7 +16,9 @@
         {% for p in cat.product_set.all %}
 
             <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="{% url 'main:productdetail' p.slug %}">
                 <img src="{{p.image.url}}"  alt="" class="img-fluid mb-3" style="height: 300px; object-fit: contain;">
+                </a>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

@@ -6,18 +6,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Search Results for <span class="text-dark">"{{request.GET.keyword}}"</span></h3>
-            <hr>
+            <h2 class="search_title">Search Results for <span>"{{request.GET.keyword}}"</span></h2>
+            <br>
             {% for result in results %}
             <div class="row">
                 <div class="col-md-3">
                     <img src="{{result.image.url}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-9">
-                    <h4><a class="text-warning" href="{% url 'main:productdetail' result.slug %}">{{result.title}}</a></h4>
-                    <p>{{result.description|truncatewords:50}}</p>
-                    <p>Return Policy: {{result.return_policy}}</p>
-                    <a href="{% url 'main:addtocart' result.id %}" class="btn btn-dark">Add To Cart</a>
+                    <h4><a class="title_text" href="{% url 'main:productdetail' result.slug %}">{{result.title}}</a></h4>
+                    <span id="detail_4">{{result.description|truncatewords:50}}</span>
+
+                    <p class="detail_3 mt-2 mb-4">Return Policy: <span> {{result.return_policy}}</span></p>
+                    <button class="add_button"><a href="{% url 'main:addtocart' result.id %}">Add To Cart</a></button>
                 </div>
             </div>
             {% endfor %}

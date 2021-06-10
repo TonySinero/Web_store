@@ -4,33 +4,31 @@
 
 {% block content %}
 
-<div class="container">
-    <h3>Product: {{product.title}}</h3><hr>
+
+<section class="container sproduct my-5 ">
     <div class="row">
-        <div class="col-md-4">
-            <img src="{{product.image.url}}" alt="" class="img-fluid">
-            <div class="row">
-                {% for pi in product.productimage_set.all %}
-                <div class="col-md-4 p-3">
-                    <a href="{{pi.image.url}}" target="_blank">
-                        <img src="{{pi.image.url}}" class="img-fluid" style="height: 100px; object-fit: contain;" alt="">
-                    </a>
+        <div class="col-lg-5 col-md-12 col-12">
+            <img src="{{product.image.url}}" alt="" class="img-fluid" id="MainImg" style="height: 500px; width: 380px; object-fit: contain;">
+                <div class="small-img-group">
+                    {% for pi in product.productimage_set.all %}
+                    <div class="small-img-col">
+                        <br>
+                        <img src="{{pi.image.url}}" class="small-img" style="height: 150px; width: 120px; object-fit: contain;" alt="">
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
         </div>
-        <div class="col-md-8">
-            <h4>{{product.title}}</h4>
-            <h5>Category: {{product.category}}</h5>
-            <h5>Price: {{product.selling_price}} .$</h5>
-            <a href="{% url 'main:addtocart' product.id %}" class="btn btn-dark">Add To Cart</a>
-            <hr>
-            <p class="text-warning">Warranty: {{product.warranty}}</p>
-            <p class="text-warning">Return Policy:{{product.return_policy}}</p>
-            <hr>
-            <p>{{product.description}}</p>
+        <div  class="col-lg-6 col-md-12 col-12 mt-4">
+            <h2 id="detail_1">{{product.title}}</h2>
+            <h5 class="detail_2 mt-4">Category: <span>{{product.category}}</span></h5>
+            <h5 class="detail_2 mt-4 mb-4">Price: <span>{{product.selling_price}} .$</span></h5>
+            <button class="add_button"><a href="{% url 'main:addtocart' product.id %}">Add To Cart</a></button>
+            <p class="detail_3 mt-4 ">Warranty: <span>{{product.warranty}}</span></p>
+            <p class="detail_3 mt-2 mb-4">Return Policy: <span>{{product.return_policy}}</span></p>
+            <span id="detail_4">{{product.description}}</span>
         </div>
     </div>
-</div>
-<br>
+</section>
 {% endblock %}
+
+
