@@ -3,27 +3,35 @@
 {% block title %}Customer Registration{% endblock %}
 
 {% block content %}
-<style>
-    .errorlist{
-        color: red;
-    }
-</style>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <h3>Customer Registration Form</h3><hr>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button class="btn btn-warning">Register</button>
-            </form>
-            <p> Already have an account? <a href="{% url 'main:customerlogin' %}">Login here</a></p>
-        </div>
-    </div>
+
+
+
+
+<div class="main_reg">
+    <p class="sign" align="center">Registration</p>
+
+        <form action="" method="POST" class="form1">
+            {% csrf_token %}
+            <p class="forgot" align="center">{{form.username.label}}</p>
+            <p align="center">{{form.username}}</p>
+            <p class="forgot" align="center">{{form.password.label}}</p>
+            <p align="center">{{form.password}}</p>
+            <p class="forgot" align="center">{{form.email.label}}</p>
+            <p align="center">{{form.email}}</p>
+            <p class="forgot" align="center">{{form.full_name.label}}</p>
+            <p align="center">{{form.full_name}}</p>
+            <p class="forgot" align="center">{{form.address.label}}</p>
+            <p align="center">{{form.address}}</p>
+
+            <button class="submit" align="center">Register</button>
+            <p class="forgot" align="center">Already have an account? <a href="{% url 'main:customerlogin' %}">Log in</a></p>
+
+            {% if error %}
+            <li style="color: red;" align="center">{{error}}</li>
+            {% endif %}
+        </form>
+
 </div>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

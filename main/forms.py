@@ -86,7 +86,7 @@ class ProductForm(forms.ModelForm):
 class PasswordForgotForm(forms.Form):
     email = forms.CharField(widget=forms.EmailInput(attrs={
         "class": "form-control",
-        "placeholder": "Enter the email used in customer account..."
+        "placeholder": "..."
     }))
 
     def clean_email(self):

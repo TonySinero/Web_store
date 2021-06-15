@@ -11,6 +11,11 @@
     --sofia:'Sofia', cursive;
 
 }
+.errorlist {
+        color: red;
+        font-family: var(--roboto);
+
+    }
 
 .primary-color {
     color: var(--primary-color);
@@ -523,13 +528,13 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
 }
 .detail_3{
     font-family: var(--roboto);
-    color: var(--text-color);
+    color: black;
 }
 .detail_3 span{
     font-weight: bold;
 }
 .detail_3 span:hover{
-    color: black;
+    color: var(--text-color);
     transition: 0.5s;
 }
 #detail_4{
@@ -538,20 +543,17 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
 }
 
 .add_button{
-    background-color: black;
-    border-radius: 7px;
+    background: linear-gradient(to right, black, var(--text-color));
+    border-radius: 4px;
     border: none;
-    font-size: 22px;
+    font-size: 17px;
 }
 .add_button a{
     color: white;
     text-decoration: none;
     font-family: var(--roboto);
 }
-.add_button:hover{
-    background-color: var(--text-color);
-    transition: 0.5s;
-}
+
 .title_text{
     text-decoration: none;
     font-family: var(--roboto);
@@ -570,3 +572,109 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
     color: lime;
     transition: 0.5s;
 }
+ .main {
+
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 500px;
+        margin: 5em auto;
+
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+
+ .main_reg{
+
+     background-color: #FFFFFF;
+        width: 400px;
+        height: 750px;
+        margin: 5em auto;
+
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+
+ .main_fog{
+     background-color: #FFFFFF;
+        width: 550px;
+        height: 400px;
+        margin-left: 470px ;
+        margin-bottom: 180px;
+
+
+
+    }
+    .sign{
+        padding-top: 40px;
+        color: black;
+        font-family: var(--roboto);
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .sign_1 {
+        padding-top: 40px;
+        color: black;
+        font-family: var(--roboto);
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .submit_1 {
+      cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        background: linear-gradient(to right, black, var(--text-color));
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: var(--roboto);
+        margin-left: 35%;
+        font-size: 14px;
+        font-weight: bold;
+
+    }
+    .sign_1 h4,h3{
+        font-family: var(--roboto);
+        font-weight: bold;
+    }
+
+
+    .form1 {
+        padding-top: 40px;
+    }
+
+
+
+    .submit {
+      cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        background: linear-gradient(to right, black, var(--text-color));
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: var(--roboto);
+        margin-left: 35%;
+        font-size: 14px;
+        font-weight: bold;
+
+    }
+
+    .forgot {
+        font-family: var(--roboto);
+        color: black;
+        padding-top: 10px;
+        font-weight: bold;
+    }
+
+    .forgot a {
+
+        color: black;
+        text-decoration: none
+    }
+    .forgot a:hover {
+        color: var(--text-color);
+        transition: 0.5s;
+    }

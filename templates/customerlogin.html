@@ -3,38 +3,27 @@
 {% block title %}Customer Login{% endblock %}
 
 {% block content %}
-<style>
-    .errorlist {
-        color: red;
-    }
-</style>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <h3>Customer Login Form</h3>
-            <hr>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button class="btn btn-warning">Login</button>
-                {% if error %}
-                <li style="color: red;">{{error}}</li>
-                {% endif %}
-            </form>
-            <p>Forgot Password?<a href="{% url 'main:passworforgot' %}">Reset</a></p>
-            <p> or dont have account? <a href="{% url 'main:customerregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register here</a></p>
-        </div>
-    </div>
+
+
+<div class="main">
+    <p class="sign" align="center">Sign in</p>
+
+        <form action="" method="POST" class="form1">
+            {% csrf_token %}
+            <p class="forgot" align="center">{{form.username.label}}</p>
+            <p align="center">{{form.username}}</p>
+            <p class="forgot" align="center">{{form.password.label}}</p>
+            <p align="center">{{form.password}}</p>
+
+            <button class="submit" align="center">Sign in</button>
+            <p class="forgot" align="center">Forgot Password? <a href="{% url 'main:passworforgot' %}">Click here</a></p>
+            <p class="forgot" align="center">Or dont have account? <a href="{% url 'main:customerregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register here</a></p>
+            {% if error %}
+            <li style="color: red;" align="center">{{error}}</li>
+            {% endif %}
+        </form>
+
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
