@@ -577,7 +577,7 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
         background-color: #FFFFFF;
         width: 400px;
         height: 500px;
-        margin: 5em auto;
+        margin: 3em auto;
 
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
@@ -587,7 +587,7 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
      background-color: #FFFFFF;
         width: 400px;
         height: 750px;
-        margin: 5em auto;
+        margin: 3em auto;
 
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
@@ -677,4 +677,171 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
     .forgot a:hover {
         color: var(--text-color);
         transition: 0.5s;
+    }
+
+    .container_cart{
+
+        overflow-x: hidden;
+        font-family: var(--roboto);
+        font-size: 20px;
+
+    }
+    .table_cart thead tr{
+        background-color: black;
+        color: #FFFFFF;
+
+    }
+    .table_cart thead tr th{
+        width: 550px;
+
+    }
+    .cent h2{
+        margin-top: 50px;
+        font-weight: bold;
+    }
+    .table_cart tbody #cfg td{
+        padding-top: 25px;
+    }
+    .button_plus a{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: var(--roboto);
+    }
+    .button_plus{
+        background-color: black;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+
+        border: none;
+    }
+    .button_minus{
+        background: linear-gradient(to right, black, var(--text-color));
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        border: none;
+
+    }
+    .button_minus a{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: var(--roboto);
+    }
+    .button_delete{
+        background-color: var(--text-color);
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        border: none;
+    }
+    .button_delete a{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: var(--roboto);
+    }
+    #ehre th{
+        padding-top: 25px;
+    }
+    #buy_b th{
+        padding-top: 25px;
+    }
+    #buy_b .button_buy:hover{
+        background-color: lime;
+        transition: 0.5s;
+        border-radius: 50px;
+
+    }
+
+    #buy_b .button_buy{
+        border: none;
+        background-color: black;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 80px;
+        height: 40px;
+    }
+    #buy_b .button_buy a{
+        text-decoration: none;
+        font-family: var(--roboto);
+        font-size: 20px;
+        color: white;
+
+    }
+    .form2{
+        font-family: var(--roboto);
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        width: 500px;
+        height: 600px;
+        margin: 3em auto;
+    }
+    .submit2{
+        cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        background: linear-gradient(to right, black, var(--text-color));
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: var(--roboto);
+        margin-left: 35%;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 35px;
+    }
+    .submit_log_admin{
+        cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        background: linear-gradient(to right, black, var(--text-color));
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: var(--roboto);
+        margin-left: 27%;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .last{
+        margin-top: 47px;
+        font-family: var(--roboto);
+
+    }
+    #upd{
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    #upd:hover{
+        color: lime;
+        transition: 0.5s;
+    }
+    #del_all{
+        color: black;
+
+    }
+    #del_all:hover{
+        color: red;
+        transition: 0.5s;
+    }
+    .profile{
+        font-family: var(--roboto);
+        margin-top: 40px;
+    }
+    .ord_id{
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    .ord_id:hover{
+        color: black;
+        transition: 0.5s;
+    }
+    .order_det{
+        font-family: var(--roboto);
+        margin-top: 25px;
     }

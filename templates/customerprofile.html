@@ -3,10 +3,11 @@
 {% block title %}My Profile{% endblock %}
 
 {% block content %}
+<div class="profile">
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <h3>Detail Information</h3><hr>
+            <h3>Detail Information</h3><br><br>
             <p><span class="font-weight-bold">Name: </span> {{customer.full_name}}</p>
             <p><span class="font-weight-bold">Username: </span> {{customer.user.username}}</p>
             <p><span class="font-weight-bold">Email: </span> {{customer.user.email}}</p>
@@ -15,7 +16,7 @@
         </div>
         <div class="col-md-8">
             <h3>Previous Orders</h3>
-            <hr>
+            <br>
             <table class="table">
                 <thead>
                     <tr>
@@ -30,7 +31,7 @@
                     {% for ord in orders %}
                     <tr>
                         <td>{{forloop.counter}}</td>
-                        <td><a href="{% url 'main:customerorderdetail' ord.pk %}"> #ORDER_{{ord.id}}</a></td>
+                        <td><a class="ord_id" href="{% url 'main:customerorderdetail' ord.pk %}"> #ORDER_{{ord.id}}</a></td>
                         <td>{{ord.total}}</td>
                         <td>{{ord.created_at|timesince}} ago</td>
                         <td>{{ord.order_status}}</td>
@@ -40,6 +41,7 @@
             </table>
         </div>
     </div>
+</div>
 </div>
 <br>
 <br>
@@ -51,6 +53,5 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
 {% endblock %}

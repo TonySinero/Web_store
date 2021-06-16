@@ -3,35 +3,23 @@
 {% block title %}Admin Login{% endblock %}
 
 {% block content %}
-<style>
-    .errorlist {
-        color: red;
-    }
-</style>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <h3>Admin Login Form</h3>
-            <hr>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button class="btn btn-warning">Login as a Admin</button>
-                {% if error %}
-                <li style="color: red;">{{error}}</li>
-                {% endif %}
-            </form>
-        </div>
-    </div>
+
+<div class="main">
+    <p class="sign" align="center">Admin Login Form</p>
+
+        <form action="" method="POST" class="form1">
+            {% csrf_token %}
+            <p class="forgot" align="center">{{form.username.label}}</p>
+            <p align="center">{{form.username}}</p>
+            <p class="forgot" align="center">{{form.password.label}}</p>
+            <p align="center">{{form.password}}</p>
+
+            <button class="submit_log_admin" align="center">Login as a Admin</button>
+            {% if error %}
+            <li style="color: red;" align="center">{{error}}</li>
+            {% endif %}
+        </form>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

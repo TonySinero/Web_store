@@ -6,42 +6,56 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h3>Items in the cart</h3>
-            <a class="text-dark" href="{% url 'main:mycart' %}">Update Cart</a>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>SN</th>
-                        <th>Product</th>
-                        <th>Rate</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for cp in cart.cartproduct_set.all %}
-                    <tr>
-                        <td>{{forloop.counter}}</td>
-                        <td>{{cp.product.title}}</td>
-                        <td>{{cp.rate}}</td>
-                        <td>{{cp.quantity}}</td>
-                        <td>{{cp.subtotal}}</td>
-                    </tr>
-                    {% endfor %}
-                    <tr>
-                        <th colspan="4" class="text-right">Total</th>
-                        <th>{{cart.total}} .$</th>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="last">
+                <a id="upd" href="{% url 'main:mycart' %}">Update Cart</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Product</th>
+                            <th>Rate</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cp in cart.cartproduct_set.all %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{cp.product.title}}</td>
+                            <td>{{cp.rate}}</td>
+                            <td>{{cp.quantity}}</td>
+                            <td>{{cp.subtotal}}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <th colspan="4" class="text-right">Total</th>
+                            <th>{{cart.total}} .$</th>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
         </div>
+
         <div class="col-md-6">
-            <h3>Checkout Form</h3>
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button class="btn btn-success">Place order</button>
-            </form>
+            <h3 align="center">Checkout Form</h3>
+            <form action="" method="POST" class="form2">
+            {% csrf_token %}
+            <p class="forgot" align="center">{{form.ordered_by.label}}</p>
+            <p align="center">{{form.ordered_by}}</p>
+            <p class="forgot" align="center">{{form.shipping_address.label}}</p>
+            <p align="center">{{form.shipping_address}}</p>
+            <p class="forgot" align="center">{{form.mobile.label}}</p>
+            <p align="center">{{form.mobile}}</p>
+            <p class="forgot" align="center">{{form.email.label}}</p>
+            <p align="center">{{form.email}}</p>
+            <p class="forgot" align="center">{{form.payment_method.label}}</p>
+            <p align="center">{{form.payment_method}}</p>
+
+            <button class="submit2" align="center">Place order</button>
+
+        </form>
         </div>
     </div>
 </div>
