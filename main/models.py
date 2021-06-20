@@ -6,7 +6,7 @@ class Admin(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50)
     image = models.ImageField(upload_to="admins")
-    mobile = models.CharField(max_length=20)
+    mobile = models.CharField(max_length=30)
 
     def __str__(self):
         return self.user.username
@@ -94,7 +94,7 @@ class Order(models.Model):
     cart = models.OneToOneField(Cart, on_delete=models.CASCADE)
     ordered_by = models.CharField(max_length=200)
     shipping_address = models.CharField(max_length=200)
-    mobile = models.CharField(max_length=20)
+    mobile = models.CharField(max_length=30)
     email = models.EmailField(null=True, blank=True)
     subtotal = models.PositiveIntegerField()
     discount = models.PositiveIntegerField()
@@ -102,7 +102,7 @@ class Order(models.Model):
     order_status = models.CharField(max_length=50, choices=ORDER_STATUS)
     created_at = models.DateTimeField(auto_now_add=True)
     payment_method = models.CharField(
-        max_length=20, choices=METHOD, default="Cash On Delivery")
+        max_length=30, choices=METHOD, default="Cash On Delivery")
     payment_completed = models.BooleanField(
         default=False, null=True, blank=True)
 

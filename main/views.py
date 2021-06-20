@@ -44,7 +44,7 @@ class ProductDetailView(EcomMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         url_slug = self.kwargs['slug']
         product = Product.objects.get(slug=url_slug)
-        #The number of views can be removed and added on the product description page.
+        # The number of views can be removed and added on the product description page.
         # Allows the administrator to see if the product is popular by the number of views
         product.view_count += 1
         product.save()
