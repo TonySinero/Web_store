@@ -845,3 +845,21 @@ body > div.container > nav > ul > li:nth-child(n):hover>a{
         font-family: var(--roboto);
         margin-top: 25px;
     }
+
+.log_reg{
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-family: var(--roboto);
+}
+
+.log_reg_2{
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-family: var(--roboto);
+}

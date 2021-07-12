@@ -11,10 +11,9 @@
         <form action="" method="POST" class="form1">
             {% csrf_token %}
             <p class="forgot" align="center">{{form.username.label}}</p>
-            <p align="center">{{form.username}}</p>
+            <input type="text" name={{form.username.name}} class="log_reg" >
             <p class="forgot" align="center">{{form.password.label}}</p>
-            <p align="center">{{form.password}}</p>
-
+            <input type="password" name={{form.password.name}} class="log_reg">
             <button class="submit" align="center">Sign in</button>
             <p class="forgot" align="center">Forgot Password? <a href="{% url 'main:passworforgot' %}">Click here</a></p>
             <p class="forgot" align="center">Or dont have account? <a href="{% url 'main:customerregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}">Register here</a></p>

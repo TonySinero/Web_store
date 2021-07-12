@@ -43,13 +43,13 @@
             <form action="" method="POST" class="form2">
             {% csrf_token %}
             <p class="forgot" align="center">{{form.ordered_by.label}}</p>
-            <p align="center">{{form.ordered_by}}</p>
+            <input type="text" name={{form.ordered_by.name}} class="log_reg_2">
             <p class="forgot" align="center">{{form.shipping_address.label}}</p>
-            <p align="center">{{form.shipping_address}}</p>
+            <input type="text" name={{form.shipping_address.name}} class="log_reg_2">
             <p class="forgot" align="center">{{form.mobile.label}}</p>
-            <p align="center">{{form.mobile}}</p>
+            <input type="text" name={{form.mobile.name}} class="log_reg_2">
             <p class="forgot" align="center">{{form.email.label}}</p>
-            <p align="center">{{form.email}}</p>
+            <input type="text" name={{form.email.name}} class="log_reg_2">
             <p class="forgot" align="center">{{form.payment_method.label}}</p>
             <p align="center">{{form.payment_method}}</p>
 

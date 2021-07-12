@@ -13,15 +13,15 @@
         <form action="" method="POST" class="form1">
             {% csrf_token %}
             <p class="forgot" align="center">{{form.username.label}}</p>
-            <p align="center">{{form.username}}</p>
+            <input type="text" name={{form.username.name}} class="log_reg">
             <p class="forgot" align="center">{{form.password.label}}</p>
-            <p align="center">{{form.password}}</p>
+            <input type="password" name={{form.password.name}} class="log_reg">
             <p class="forgot" align="center">{{form.email.label}}</p>
-            <p align="center">{{form.email}}</p>
+            <input type="text" name={{form.email.name}} class="log_reg">
             <p class="forgot" align="center">{{form.full_name.label}}</p>
-            <p align="center">{{form.full_name}}</p>
+            <input type="text" name={{form.full_name.name}} class="log_reg">
             <p class="forgot" align="center">{{form.address.label}}</p>
-            <p align="center">{{form.address}}</p>
+            <input type="text" name={{form.address.name}} class="log_reg">
 
             <button class="submit" align="center">Register</button>
             <p class="forgot" align="center">Already have an account? <a href="{% url 'main:customerlogin' %}">Log in</a></p>
