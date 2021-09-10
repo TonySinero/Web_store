@@ -6,6 +6,7 @@
 <div class="container_cart text-center" >
     <div>
         <div class="cent">
+            {% if cart %}
             <h2>Items in cart</h2><br>
             <table class="table_cart">
                 <thead>
@@ -47,6 +48,9 @@
                     {% endif %}
                 </tbody>
             </table>
+            {% else %}
+            <h2>Empty cart</h2>
+            {% endif %}
         </div>
     </div>
 </div>
